@@ -18,7 +18,7 @@
 <div class="jumbotron">
         <a href="index.html">Back to the options...</a>
         <br />
-    <h1 class="HeaderDisplay">Move File to Server</h1>
+    <h1 class="HeaderDisplay">Delete File or Directory</h1>
     <hr>
     <form >
         <fieldset>
@@ -35,14 +35,9 @@
         </fieldset>
         <fieldset>
             <div class="form-group">
-                <label for="moveFile">Choose the file to move to the server</label>
-                <div class="input-group mb-3">
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="moveFile">
-                    <label class="custom-file-label" for="moveFile">Choose file</label>
-                  </div>
-                </div>
-              </div>
+                <label for="fileName">Enter the name of the file to be deleted </label>
+                <input type="text" class="form-control" id="fileName" aria-describedby="Enter File name" placeholder="Enter File name">
+            </div>
         </fieldset>
         <button type="submit" class="btn btn-primary">Submit</button>
         <br />
@@ -56,7 +51,7 @@
         </div>
         <div class="alert alert-dismissible alert-success" id="success" hidden>
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Tthe file is successfully moved under your directory</strong>
+                <strong>The file was successfully removed from this directory</strong>
         </div>
     </form>
   </div>
