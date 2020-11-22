@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>File System</title>
   <meta charset="utf-8">
@@ -8,51 +9,56 @@
   <script src="Scripts/jquery.min.js"></script>
   <script src="Scripts/bootstrap.bundle.min.js"></script>
 </head>
-<body>
-​ <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 2%;">
-    <div class="navbar-header">
-        <span class="navbar-text" style="font-weight: bold; font-size: x-large; font-family: Calibri;"><a href="/" style="text-decoration:none">Computer Networks File System</a></span>
-    </div>
-</nav>
 
-<div class="jumbotron">
-        <a href="index.html">Back to the options...</a>
-        <br />
+<body>
+  ​ <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 2%;">
+    <div class="navbar-header">
+      <span class="navbar-text" style="font-weight: bold; font-size: x-large; font-family: Calibri;"><a href="/"
+          style="text-decoration:none">Computer Networks File System</a></span>
+    </div>
+  </nav>
+
+  <div class="jumbotron">
+    <a href="index.html">Back to the options...</a>
+    <br />
     <h1 class="HeaderDisplay">Delete File or Directory</h1>
     <hr>
-    <form >
-        <fieldset>
-          <div class="form-group">
-            <label for="clientID">Enter the Client ID</label>
-            <input type="text" class="form-control" id="clientID" aria-describedby="Enter Client ID" placeholder="Enter Client ID" required>
-          </div>
-        </fieldset>
-        <fieldset>
-            <div class="form-group">
-                <label for="directoryName">Enter the name of the directory</label>
-                <input type="text" class="form-control" id="directoryName" aria-describedby="Enter directory name" placeholder="Enter directory name">
-            </div>
-        </fieldset>
-        <fieldset>
-            <div class="form-group">
-                <label for="fileName">Enter the name of the file to be deleted </label>
-                <input type="text" class="form-control" id="fileName" aria-describedby="Enter File name" placeholder="Enter File name">
-            </div>
-        </fieldset>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <br />
-        <div class="alert alert-dismissible alert-danger" id="error" hidden>
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Error!</strong> This CID does not exist</a>.
+    <form method="POST" action="/deleteFile">
+      <fieldset>
+        <div class="form-group">
+          <label for="clientID">Enter the Client ID</label>
+          <input type="text" name="clientId" class="form-control" id="clientID" aria-describedby="Enter Client ID"
+            placeholder="Enter Client ID" required>
         </div>
-        <div class="alert alert-dismissible alert-danger" id="error" hidden>
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Error!</strong> The directory does not exist for this client</a>.
+      </fieldset>
+      <fieldset>
+        <div class="form-group">
+          <label for="directoryName">Enter the name of the directory</label>
+          <input type="text" name="dir" class="form-control" id="directoryName" aria-describedby="Enter directory name"
+            placeholder="Enter directory name">
         </div>
-        <div class="alert alert-dismissible alert-success" id="success" hidden>
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>The file was successfully removed from this directory</strong>
+      </fieldset>
+      <fieldset>
+        <div class="form-group">
+          <label for="fileName">Enter the name of the file to be deleted </label>
+          <input type="text" name="inputFile" class="form-control" id="fileName" aria-describedby="Enter File name"
+            placeholder="Enter File name">
         </div>
+      </fieldset>
+      <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+      <br />
+      <div class="alert alert-dismissible alert-danger" id="error" hidden>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Error!</strong> This CID does not exist</a>.
+      </div>
+      <div class="alert alert-dismissible alert-danger" id="error" hidden>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Error!</strong> The directory does not exist for this client</a>.
+      </div>
+      <div class="alert alert-dismissible alert-success" id="success" hidden>
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>The file was successfully removed from this directory</strong>
+      </div>
     </form>
   </div>
 </body>
