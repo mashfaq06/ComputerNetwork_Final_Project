@@ -71,7 +71,7 @@ app.post('/createClient', urlEcodedParser, (req, res) => {
 app.post('/createDirectory', urlEcodedParser, (req, res) => {
 
 
-    fs.access("./clients/" + req.body.clientId + '/' + req.body.dir, function (error) {
+    fs.access("./clients/" + req.body.clientId , function (error) {
         if (error) {
 
             const data = req.body
@@ -124,7 +124,7 @@ app.post('/moveFile', urlEcodedParser, (req, res) => {
 app.post('/deleteFile', urlEcodedParser, (req, res) => {
 
 
-    fs.access("./clients/" + req.body.clientId + '/' + req.body.dir, function (error) {
+    fs.access("./clients/" + req.body.clientId , function (error) {
         if (error) {
             const data = req.body
             res.render('deleteFail3', { data: data })
@@ -154,4 +154,4 @@ app.post('/deleteFile', urlEcodedParser, (req, res) => {
 
 //  **************************** End Delete Files ***********************************************
 
-app.listen(5006)
+app.listen(4000)
