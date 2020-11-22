@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fail</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    ​ <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 2%;">
+        <div class="navbar-header">
+            <span class="navbar-text" style="font-weight: bold; font-size: x-large; font-family: Calibri;"><a href="/"
+                    style="text-decoration:none">Computer Networks File System</a></span>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <h2>The Client ID: <%= data.clientId %> is already existed!</h2>
+        <h4>Please Enter a new Client ID</h4>
+        <a href="index.html">Back to the options...</a>
+        <br />
+        <h1 class="HeaderDisplay">Create Client</h1>
+        <hr>
+        <form method="POST" action="/createClient">
+            <fieldset>
+                <div class="form-group">
+                    <label for="clientID">Enter the Client ID to register</label>
+                    <input type="text" name="clientId" class="form-control" id="clientID"
+                        aria-describedby="Enter Client ID" placeholder="Enter Client ID" required>
+                </div>
+            </fieldset>
+            <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+        </form>
+    </div>
+</body>
