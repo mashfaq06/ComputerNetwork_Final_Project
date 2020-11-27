@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-  <title>File System</title>
+  <title>Move File</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bootstrap/bootstrap.css">
+  <link rel='icon' href='bootstrap/Icon/favicon.ico' type='image/x-icon' />
   <script src="Scripts/jquery.min.js"></script>
   <script src="Scripts/bootstrap.bundle.min.js"></script>
 </head>
@@ -14,7 +15,7 @@
   ​ <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 2%;">
     <div class="navbar-header">
       <span class="navbar-text" style="font-weight: bold; font-size: x-large; font-family: Calibri;"><a href="/"
-          style="text-decoration:none">Computer Networks File System</a></span>
+          style="text-decoration:none"><img src='bootstrap/Icon/favicon.ico '> Computer Networks File System</a></span>
     </div>
   </nav>
 
@@ -35,13 +36,13 @@
         <div class="form-group">
           <label for="directoryName">Enter the name of the directory</label>
           <input type="text" name="dir" class="form-control" id="directoryName" aria-describedby="Enter directory name"
-            placeholder="Enter directory name">
+            placeholder="Enter directory name" required>
         </div>
       </fieldset>
       <br />
       <fieldset>
         <div class="form-group"></div>
-        <input type="file" name="file">
+        <input type="file" name="file" required>
         <input type="submit" value="upload">
   </div>
   </fieldset>

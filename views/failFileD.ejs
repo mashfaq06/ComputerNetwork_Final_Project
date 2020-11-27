@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Moved Succesfully</title>
+    <title>Fail</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
@@ -20,13 +20,11 @@
     </nav>
 
     <div class="jumbotron">
-        <h2>Your file successfully moved !</h2>
-        <h3>Your Client Id: <%= data.clientId %></h3>
-        <h3>Your Directory Name: <%= data.dir %></h3>
-        <h3>Your File Name: <%= file.name %></h3>
+        <h2>Please check your input, Directory Name : "<%= data.dir %>" does not exist!!.</h2>
+
         <a href="index.html">Back to the options...</a>
         <br />
-        <a href="moveFile.html">Move another file</a>
+        <a href="moveFile.html">Move File.</a>
 
         <hr>
 

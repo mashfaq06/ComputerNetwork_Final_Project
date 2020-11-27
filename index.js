@@ -71,7 +71,7 @@ app.post('/createClient', urlEcodedParser, (req, res) => {
 app.post('/createDirectory', urlEcodedParser, (req, res) => {
 
 
-    fs.access("./clients/" + req.body.clientId , function (error) {
+    fs.access("./clients/" + req.body.clientId, function (error) {
         if (error) {
 
             const data = req.body
@@ -105,16 +105,38 @@ app.post('/moveFile', urlEcodedParser, (req, res) => {
         let file = req.files.file
         let fileName = file.name
 
-        file.mv("./clients/" + req.body.clientId + "/" + req.body.dir + "/" + fileName, (err) => {
-            if (err) {
-                const dat = req.body
-                res.render('failFile')
-            } else {
-                const data = req.body
-                res.render('fileSuccess', { data: data, file: file })
+        fs.access("./clients/" + req.body.clientId, function (error) {
+            if (error) {
 
+                const data = req.body
+                res.render('failFileClient', { data: data, file: file })
+
+            } else {
+                fs.access("./clients/" + req.body.clientId + '/' + req.body.dir, function (error) {
+                    if (error) {
+
+                        const data = req.body
+                        res.render('failFileD', { data: data, file: file } )
+
+                    } else {
+
+                        file.mv("./clients/" + req.body.clientId + "/" + req.body.dir + "/" + fileName, (err) => {
+                            if (err) {
+                                const data = req.body
+                               res.render('failFile')
+                            } else {
+                                const data = req.body
+                                res.render('fileSuccess', { data: data, file: file })
+
+                            }
+                        })
+
+                    }
+                })
             }
         })
+
+
     }
 })
 //  **************************** END - moveFile ************************************************* 
@@ -124,7 +146,7 @@ app.post('/moveFile', urlEcodedParser, (req, res) => {
 app.post('/deleteFile', urlEcodedParser, (req, res) => {
 
 
-    fs.access("./clients/" + req.body.clientId , function (error) {
+    fs.access("./clients/" + req.body.clientId, function (error) {
         if (error) {
             const data = req.body
             res.render('deleteFail3', { data: data })
